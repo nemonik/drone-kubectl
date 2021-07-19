@@ -1,4 +1,4 @@
-FROM bitnami/kubectl:1.21.2
+FROM bitnami/kubectl:1.21.1
 
 LABEL maintainer "Michael Joseph Walsh <github.com@nemonik.com>"
 LABEL base-on-the-work-of "Sinlead <opensource@sinlead.com>"
