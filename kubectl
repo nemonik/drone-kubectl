@@ -7,7 +7,7 @@ PATH="/opt/bitnami/kubectl/bin:$PATH"
 INIT_FILE=/opt/sinlead/kubectl/initialized
 
 if [ ! -f ${INIT_FILE} ]; then
-    init-kubectl
+    init-kubectl > /dev/null
     touch ${INIT_FILE}
 fi
 
