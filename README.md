@@ -11,10 +11,8 @@ name: deploy
 
 steps:
   - name: deploy
-    image: sinlead/drone-kubectl
+    image: nemonik/drone-kubectl
     settings:
-      kubernetes_server:
-        from_secret: k8s_server
       kubernetes_cert:
         from_secret: k8s_cert
       kubernetes_token:
@@ -28,11 +26,6 @@ steps:
 ## How to get the credentials
 
 First, you need to have a service account with **proper privileges** and **service-account-token**.
-
-You can find out your server URL which looks like `https://xxx.xxx.xxx.xxx` by the command:
-```bash
-kubectl config view -o jsonpath='{range .clusters[*]}{.name}{"\t"}{.cluster.server}{"\n"}{end}'
-```
 
 If the service account is `deploy`, you would have a secret named `deploy-token-xxxx` (xxxx is some random characters).
 You can get your token and certificate by the following commands:
